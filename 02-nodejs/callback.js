@@ -49,10 +49,11 @@ getUser((error, user) => {
             }
 
             console.log(`
-            Nome: ${user.username}
-            Senha: ${user.password}    
-            Telefone: (${phoneNumber.ddd}) ${phoneNumber.phoneNumber}
-            Endereço: ${addressUser.address}, ${addressUser.number}, ${addressUser.cep}
+        {
+            usuario: { username: ${user.username}, password: ${user.password} },
+            telefone: { phoneNumber: ${phoneNumber.phoneNumber}, ddd: ${phoneNumber.ddd} },
+            endereco: { address: ${addressUser.address}, cep: ${addressUser.cep}, number: ${addressUser.number} }
+        }
             `)
         })
     })
